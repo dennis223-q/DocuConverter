@@ -1,0 +1,15 @@
+services:
+  docforge:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: 8000
+      SECRET_KEY: local-development-secret
+      MAX_FILE_SIZE_MB: 50
+      MAX_FILES_PER_REQUEST: 20
+      PROCESSING_TIMEOUT_SECONDS: 180
+      FILE_RETENTION_MINUTES: 15
+      OCR_LANGUAGES: eng,hin,spa,fra,deu
+      CORS_ORIGINS: "*"
+      STORAGE_PROVIDER: local
